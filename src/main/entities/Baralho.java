@@ -10,9 +10,9 @@ import main.enums.Valor;
 
 public final class Baralho {
 
-    private Carta carta;
+
     
-    private List<Carta> baralho = new ArrayList<>();
+    private final List<Carta> baralho = new ArrayList<>();
 
    public Baralho(){
         ContruirBaralho();
@@ -24,6 +24,7 @@ public final class Baralho {
     }
 
     public void ContruirBaralho(){
+        baralho.clear();
         for(Naipe simboloNaipe : Naipe.values()){
             for(Valor valorCarta : Valor.values()){                
                 baralho.add(new Carta(simboloNaipe,valorCarta));
@@ -34,7 +35,10 @@ public final class Baralho {
     public void Embaralhar(){
         Collections.shuffle(baralho);
     }
-    public List RetirarCarta(){
-        List<Carta> retirada = new ArrayList<>();
+    
+    public Carta RetirarCarta(){
+        Carta retirada = baralho.getFirst();
+        baralho.remove(0);
+        return retirada;
     }
 }

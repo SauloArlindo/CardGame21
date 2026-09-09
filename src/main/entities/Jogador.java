@@ -5,17 +5,16 @@ import java.util.List;
 
 public class Jogador {
 
+    
     private String name;
-    private int ponto;
     private List <Carta> cartasMao = new ArrayList<>();
 
     public Jogador(){
 
     }
 
-    public Jogador(String name, int ponto, List<Carta> cartasMao) {
+    public Jogador(String name, List<Carta> cartasMao) {
         this.name = name;
-        this.ponto = ponto;
         this.cartasMao = cartasMao;
     }
 
@@ -27,14 +26,6 @@ public class Jogador {
         this.name = name;
     }
 
-    public int getPonto() {
-        return ponto;
-    }
-
-    public void setPonto(int ponto) {
-        this.ponto = ponto;
-    }
-
     public List<Carta> getCartasMao() {
         return cartasMao;
     }
@@ -43,7 +34,14 @@ public class Jogador {
         this.cartasMao = cartasMao;
     }
     
-    public void AddCartaMao(){
-        
+    public void addCartaMao(Carta carta){
+        cartasMao.add(carta);
+    }
+    public int calcularPonto(){
+        int ponto = 0;
+        for (int i = 0 ; i < cartasMao.size(); i ++){
+            ponto += cartasMao.get(i).getValor().getPontos();
+        }
+        return ponto;
     }
 }

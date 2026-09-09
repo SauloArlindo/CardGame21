@@ -15,13 +15,14 @@ public enum Valor {
     Dama(10),
     Rei(10);
 
-    private int pontos;
+    private final int pontos;
 
    Valor(int pontos){
         this.pontos = pontos;
    }
 
-   private int getPontos(){
+   
+   public int getPontos(){
         return pontos;
    }
     
