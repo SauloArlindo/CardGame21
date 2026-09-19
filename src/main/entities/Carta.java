@@ -12,8 +12,6 @@ public class Carta {
         this.valor = valor;
 
     }
-
-    
     public Naipe getNaipe() {
         return naipe;
     }

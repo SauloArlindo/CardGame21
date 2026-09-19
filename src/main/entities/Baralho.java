@@ -15,7 +15,7 @@ public final class Baralho {
     private final List<Carta> baralho = new ArrayList<>();
 
    public Baralho(){
-        ContruirBaralho();
+        ConstruirBaralho();
         Embaralhar();
    }
 
@@ -23,7 +23,7 @@ public final class Baralho {
         return baralho;
     }
 
-    public void ContruirBaralho(){
+    public void ConstruirBaralho(){
         baralho.clear();
         for(Naipe simboloNaipe : Naipe.values()){
             for(Valor valorCarta : Valor.values()){                

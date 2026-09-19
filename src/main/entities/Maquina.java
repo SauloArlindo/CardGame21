@@ -1,37 +1,21 @@
 package main.entities;
 
-import java.util.ArrayList;
 import java.util.List;
+import main.enums.Decisao;
 
+public class Maquina extends Jogador{
 
-
-public class Maquina {
-
-    private int ponto;
-    private List <Carta> cartasMao = new ArrayList();
-
-    public Maquina(){
-        
+    public Maquina(String name, List<Carta> cartasMao) {
+        super(name, cartasMao);
     }
 
-    public Maquina(int ponto, List<Carta> cartasMao) {
-        this.ponto = ponto;
-        this.cartasMao = cartasMao;
+    public Decisao  decidirJogada(){
+        int pontomaq = calcularPonto();
+        if (pontomaq < 18){
+            return Decisao.COMPRAR;
+        }else{
+            return Decisao.PARAR;
+        }
     }
 
-    public int getPonto() {
-        return ponto;
-    }
-
-    public void setPonto(int ponto) {
-        this.ponto = ponto;
-    }
-
-    public List<Carta> getCartasMao() {
-        return cartasMao;
-    }
-
-    public void setCartasMao(List<Carta> cartasMao) {
-        this.cartasMao = cartasMao;
-    }
 }
