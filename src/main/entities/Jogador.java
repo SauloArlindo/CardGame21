@@ -10,9 +10,8 @@ public class Jogador {
     private String name;
     private List <Carta> cartasMao = new ArrayList<>();
 
-    public Jogador(String name, List<Carta> cartasMao) {
+    public Jogador(String name) {
         this.name = name;
-        this.cartasMao = cartasMao;
     }
 
     public String getName() {
@@ -25,10 +24,6 @@ public class Jogador {
 
     public List<Carta> getCartasMao() {
         return cartasMao;
-    }
-
-    public void setCartasMao(List<Carta> cartasMao) {
-        this.cartasMao = cartasMao;
     }
     
     public void addCartaMao(Carta carta){

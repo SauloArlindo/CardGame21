@@ -1,12 +1,11 @@
 package main.entities;
 
-import java.util.List;
 import main.enums.Decisao;
 
 public class Maquina extends Jogador{
 
-    public Maquina(String name, List<Carta> cartasMao) {
-        super(name, cartasMao);
+    public Maquina(String name) {
+        super(name);
     }
 
     public Decisao  decidirJogada(){
