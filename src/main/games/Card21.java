@@ -39,9 +39,17 @@ public class Card21 {
             mostrarCartasPlayer();
             if (player.calcularPonto() < 21){
                 System.out.println("Deseja Comprar uma Carta:  1 para comprare 2 para terminar o turno");
-                escolha = sc.nextInt();
-                if (escolha == 1){
-                    player.addCartaMao(baralho.RetirarCarta());
+                if (sc.hasNextInt()){    
+                    escolha = sc.nextInt();
+                    if (escolha == 1){
+                        player.addCartaMao(baralho.RetirarCarta());
+                    }
+                    if (escolha != 1 && escolha != 2){
+                        System.out.println("Opçao invalida digite somente 1 para comprar e 2 para terminar");
+                    }
+                }else{
+                    System.out.println("Opçao invalida digite somente 1 para comprar e 2 para terminar");
+                    sc.next();
                 }
             }else{
                 escolha = 2;
@@ -74,5 +82,6 @@ public class Card21 {
         }
         System.out.println(resultado);
     }
+    
 
 }
