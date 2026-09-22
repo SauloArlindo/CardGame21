@@ -21,6 +21,10 @@ public class Card21 {
         name = sc.nextLine();
         player = new Jogador(name);
         maquina = new Maquina("Computador");
+        distribuirCartas();
+        turnoJogador();
+        turnoMaquina();
+        resultadoPartida();
     }
 
     public void distribuirCartas(){
